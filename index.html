@@ -179,6 +179,14 @@
   .case-hero-points { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 30px; color: var(--grandprix); margin-bottom: 4px; }
   .season-divider { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 28px 0 0; padding-top: 18px; border-top: 1px solid var(--line-strong); }
   body.case-view .season-chart, body.case-view .grand-total, body.case-view .medal-tally, body.case-view .bureau-summary { display: none; }
+
+  .bonus-section { margin-top: 32px; padding-top: 20px; border-top: 1px dashed var(--line); }
+  .bonus-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 12px; }
+  .bonus-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--line); gap: 12px; }
+  .bonus-row:last-child { border-bottom: none; }
+  .bonus-case { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 14px; }
+  .bonus-show { color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.02em; }
+  .bonus-result { font-size: 11px; font-weight: 800; text-transform: uppercase; color: var(--muted); border: 1px solid var(--line); padding: 3px 9px; white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -228,8 +236,10 @@
 <footer class="pagefooter">
   Bureau-tilknytning er baseret på <strong>case</strong>: &amp;Co. / NoA = Pass It On, Kampen mod Ludomani, Kayak, Velux, Interactive print, Think This, Vesterbros Walk of Fame (Gadens Stemmer), Faxe Kondi. Resten (Check the Tag, An Ad for an Ad, Bomae, Pølsepresser du?, Spritstiv Speeddate og alle "case ikke identificeret") er Robert/Boisen &amp; Like-minded.<br><br>
   <strong>Sæson 2023–24</strong> dækker Rambukken/True Award/Eurobest fra efteråret 2023 (intet fundet på hultvoet.com for den periode) og Creative Circle fra foråret 2024, hvor "Interactive print" og "Think This" (&amp;Co.) vandt.<br><br>
-  Kayak-casen er "Think This (Kayak)" (CCA 2024 sølv). Alle "case ikke identificeret" i sæson 2021–22 er "Pølsepresser du?" (Kræftens Bekæmpelse). ⚠️ Ingen data fundet for Faxe Kondi — den bidrager 0 point. Velux Transforming Spaces (2 shortlister, sæson 2021–22) er hentet fra Creative Circles database.<br><br>
-  <strong>Advertising Effectiveness Award (AEA)</strong> — forgængeren til Effie Awards Denmark — tælles med efter samme pointsystem: Grand Prix 2017 (14), Vinder 2018 (guld, 7), Shortlist 2019 (1), Guld + Bronze 2020 (10). AEA-uddelingerne er placeret i efterårs-halvdelen af sæsonen ligesom Effie — ret mig, hvis AEA reelt blev uddelt i foråret. Resterende "case ikke identificeret"-poster (2016–2021) kan stadig knyttes til navngivne cases, hvis I har dem.
+  Kayak-casen er "Think This (Kayak)" (CCA 2024 sølv). ⚠️ Ingen data fundet for Faxe Kondi — den bidrager 0 point. Velux Transforming Spaces (2 shortlister, sæson 2021–22) er hentet fra Creative Circles database.<br><br>
+  <strong>Advertising Effectiveness Award (AEA)</strong> — forgængeren til Effie Awards Denmark — tælles med efter samme pointsystem: Grand Prix 2017 (Spritstiv Speeddate), Vinder 2018 (uidentificeret), Shortlist 2019 (uidentificeret), Guld 2020 (Pølsepresser du?), Bronze 2020 (Familiefortællingen).<br><br>
+  <strong>Rettet efter direkte links på hultvoet.com/who-are-we (juli 2026):</strong> True Award og Rambukken 2021 (sæson 2021–22) var fejlagtigt tilskrevet Pølsepresser du? — de er nu rettet til <strong>I Røven af 4. Division</strong>, som også har fået tilføjet en tidligere udeladt DDA-guld og CCA-shortlist (Branded Content-kategorien, sæson 2020–21). "Din teenager, din alkoholdning" er tilføjet som selvstændig case (CCA 2021 sølv i Film/61+ samt en shortlist i Art Direction) — hultvoet.com's eget link peger her, uafhængigt af Creative Circles database, som i stedet viser en sølv-medalje til Bomae i samme kategori og år; jeg har fulgt hultvoet.com's linkstruktur, men de to kilder er ikke enige. <strong>Grandma Hackers</strong>, <strong>Familiefortællingen</strong> og <strong>Afbrydelsen</strong> er tilføjet som cases i sæson 2018–19 (tidligere "case ikke identificeret"), fundet via D&amp;AD/CCA/DDA-links fra 2019-opslaget.<br><br>
+  Enkelte poster har stadig kun generiske links (fx True Award/Rambukken-lister uden case-specifikt link for 2017/2019) og står derfor fortsat som "case ikke identificeret" — send gerne rettelser.
 </footer>
 
 <script>
@@ -245,7 +255,43 @@
    Totaler, grafer og medaljer opdateres automatisk.
    ============================================================ */
 const DATA = {
-  "2016-17": { rows: [
+  "2010-11": { bonus: [
+    ["Case ikke identificeret","Aurora Youngsters — Print","Shortlist"]
+  ], rows: [] },
+  "2011-12": { bonus: [
+    ["Case ikke identificeret","DIA Future — Digital","Shortlist"],
+    ["Case ikke identificeret","Young Creative Circle — Print","Shortlist"]
+  ], rows: [] },
+  "2012-13": { bonus: [
+    ["Case ikke identificeret","UNEP Competition — Print","Shortlist"],
+    ["Case ikke identificeret","DIA Future — Digital","Shortlist"],
+    ["Case ikke identificeret","Young Creative Circle — Print ×2","Shortlist"]
+  ], rows: [] },
+  "2013-14": { bonus: [
+    ["Case ikke identificeret","Aurora Youngsters — Print","Winner"],
+    ["Case ikke identificeret","Future Lions — Digital","Shortlist"],
+    ["Case ikke identificeret","Young Creative Circle — Print","Shortlist"]
+  ], rows: [] },
+  "2014-15": { bonus: [
+    ["Case ikke identificeret","CREAM — Portfolio","Winner"],
+    ["Case ikke identificeret","Young Gun Awards — Mobile","Gold"],
+    ["Case ikke identificeret","Young Creative Circle — Digital","Winner"],
+    ["Case ikke identificeret","Kravling — Kommunikation","Shortlist"],
+    ["Case ikke identificeret","DIA Future — Digital","Shortlist"]
+  ], rows: [] },
+  "2015-16": { bonus: [
+    ["Case ikke identificeret","Creative Circle — Self-promo","Shortlist"],
+    ["Case ikke identificeret","Young Creative Circle — Digital ×2","Shortlist"],
+    ["Case ikke identificeret","Young Creative Circle — Print ×2","Shortlist"],
+    ["Case ikke identificeret","Young Gun Awards — Digital ×2","Shortlist"],
+    ["Case ikke identificeret","Kravling — Design","Shortlist"]
+  ], rows: [] },
+  "2016-17": { bonus: [
+    ["Case ikke identificeret","Luerzers Archive issue 5, 2017","Featured"],
+    ["Case ikke identificeret","Danish Internet Awards — Storytelling ×2","Shortlist"],
+    ["Case ikke identificeret","Danish Internet Awards — Short Form Film ×2","Shortlist"],
+    ["Case ikke identificeret","Danish Internet Awards — Campaign Strategy","Shortlist"]
+  ], rows: [
     ["Case ikke identificeret","Creative Circle — Direct Loyalty","silver",4,"rblm"],
     ["Case ikke identificeret","Creative Circle — PR driven campaigns","shortlist",1,"rblm"],
     ["Case ikke identificeret","Creative Circle — Internet Film","shortlist",1,"rblm"],
@@ -255,76 +301,87 @@ const DATA = {
     ["Case ikke identificeret","Danish Digital Award — Integration Omnichannel","shortlist",1,"rblm"],
     ["Case ikke identificeret","Danish Digital Award — Effectiveness","shortlist",1,"rblm"]
   ]},
-  "2017-18": { rows: [
-    ["Case ikke identificeret","Advertising Effectiveness Award (nu Effie) — Grand Prix","grandprix",14,"rblm"],
-    ["Case ikke identificeret","Rambukken — Campaign Insight","gold",7,"rblm"],
-    ["Case ikke identificeret","The True Award — Bedste Filmkampagne","silver",4,"rblm"],
-    ["Case ikke identificeret","The True Award — Bedste Film, Online, Viralt","silver",4,"rblm"],
-    ["Case ikke identificeret","The True Award — Bedste Film, Online, Entertainment","silver",4,"rblm"],
-    ["Case ikke identificeret","The True Award — Bedste Film, Online","bronze",3,"rblm"],
+  "2017-18": { bonus: [
+    ["Spritstiv Speeddate","Luerzers Archive issue 6, 2018","Featured"],
+    ["Case ikke identificeret","Cannes Lions — Young Lions Print Competition","Country Selection"]
+  ], rows: [
+    ["Spritstiv Speeddate","Advertising Effectiveness Award (nu Effie) — Grand Prix","grandprix",14,"rblm"],
+    ["Spritstiv Speeddate","Rambukken — Campaign Insight","gold",7,"rblm"],
+    ["Spritstiv Speeddate","The True Award — Bedste Filmkampagne","silver",4,"rblm"],
+    ["Spritstiv Speeddate","The True Award — Bedste Film, Online, Viralt","silver",4,"rblm"],
+    ["Spritstiv Speeddate","The True Award — Bedste Film, Online, Entertainment","silver",4,"rblm"],
+    ["Spritstiv Speeddate","The True Award — Bedste Film, Online","bronze",3,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Social Driven Campaigns","gold",7,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Integrated Campaigns","silver",4,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Film / Online","silver",4,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Direct / Data Driven","bronze",3,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Effectiveness &amp; Impact","shortlist",1,"rblm"],
+    ["Spritstiv Speeddate","Creative Circle — Effectiveness &amp; Impact","shortlist",1,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Branded Content","shortlist",1,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Social Media Singles","shortlist",1,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Direct Activation","shortlist",1,"rblm"],
     ["Spritstiv Speeddate","Creative Circle — Direct / Cross Channel","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Effectiveness","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Marketing Campaign","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Brand Activation","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Purpose &amp; Impact","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Social-Single Content","shortlist",1,"rblm"]
+    ["Spritstiv Speeddate","Danish Digital Award — Effectiveness","shortlist",1,"rblm"],
+    ["Spritstiv Speeddate","Danish Digital Award — Marketing Campaign","shortlist",1,"rblm"],
+    ["Spritstiv Speeddate","Danish Digital Award — Brand Activation","shortlist",1,"rblm"],
+    ["Spritstiv Speeddate","Danish Digital Award — Purpose &amp; Impact","shortlist",1,"rblm"],
+    ["Spritstiv Speeddate","Danish Digital Award — Social-Single Content","shortlist",1,"rblm"]
   ]},
   "2018-19": { rows: [
     ["Case ikke identificeret","Advertising Effectiveness Award (nu Effie) — Vinder","gold",7,"rblm"],
     ["Case ikke identificeret","Eurobest — Consumer Services","shortlist",1,"rblm"],
     ["Case ikke identificeret","Eurobest — Customer Acquisition &amp; Retention","shortlist",1,"rblm"],
-    ["Case ikke identificeret","D&amp;AD — Next Creatives, Experiential","shortlist_double",2,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Creative Impact","gold",7,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Creative Effectiveness","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Digital SoMe Campaigns","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Direct Activation","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Content Driven Campaigns","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Digital Banner Ads","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Brand Impact","bronze",3,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Content Production","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Danish Digital Award — Brand Impact","shortlist",1,"rblm"]
+    ["Grandma Hackers","D&amp;AD — Next Creatives, Experiential","shortlist_double",2,"rblm"],
+    ["Spritstiv Speeddate","Creative Circle — Creative Impact","gold",7,"rblm"],
+    ["Familiefortællingen","Creative Circle — Creative Effectiveness","shortlist",1,"rblm"],
+    ["Grandma Hackers","Creative Circle — Digital SoMe Campaigns","shortlist",1,"rblm"],
+    ["Grandma Hackers","Creative Circle — Direct Activation","shortlist",1,"rblm"],
+    ["Grandma Hackers","Creative Circle — Content Driven Campaigns","shortlist",1,"rblm"],
+    ["Afbrydelsen","Creative Circle — Digital Banner Ads","shortlist",1,"rblm"],
+    ["Grandma Hackers","Danish Digital Award — Brand Impact","bronze",3,"rblm"],
+    ["Grandma Hackers","Danish Digital Award — Content Production","shortlist",1,"rblm"],
+    ["Har du gjort en forskel uden at vide det","Danish Digital Award — Brand Impact","shortlist",1,"rblm"]
   ]},
-  "2019-20": { rows: [
+  "2019-20": { bonus: [
+    ["Case ikke identificeret","Cresta Awards — Viral Video","Shortlist"],
+    ["Case ikke identificeret","Epica — Communication & Public Services","Bronze"]
+  ], rows: [
     ["Case ikke identificeret","Advertising Effectiveness Award (nu Effie) — Shortlist","shortlist",1,"rblm"],
     ["Case ikke identificeret","Rambukken — Content Activation Prisen","gold",7,"rblm"],
     ["Case ikke identificeret","The True Award — The True Talent","shortlist",1,"rblm"],
     ["Case ikke identificeret","The True Award — Bedste Entertainment Kampagne","gold",7,"rblm"],
     ["Case ikke identificeret","The True Award — Best Entertainment Film","shortlist",1,"rblm"],
     ["Case ikke identificeret","The True Award — Best Long Film","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Branded Content","shortlist",1,"rblm"],
-    ["Case ikke identificeret","Creative Circle — Film / 1–20 sek.","shortlist",1,"rblm"],
+    ["Pølsepresser du?","Creative Circle — Branded Content","shortlist",1,"rblm"],
+    ["Pølsepresser du?","Creative Circle — Film / 1–20 sek.","shortlist",1,"rblm"],
     ["Case ikke identificeret","Danish Digital Award — Brand Impact NGO","gold",7,"rblm"],
     ["Case ikke identificeret","Danish Digital Award — ROI","shortlist",1,"rblm"],
     ["Case ikke identificeret","Danish Digital Award — Content Production ×2","shortlist2x",2,"rblm"]
   ]},
-  "2020-21": { rows: [
-    ["Case ikke identificeret","Advertising Effectiveness Award (nu Effie) — Guld","gold",7,"rblm"],
-    ["Case ikke identificeret","Advertising Effectiveness Award (nu Effie) — Bronze","bronze",3,"rblm"],
+  "2020-21": { bonus: [
+    ["Case ikke identificeret","Epica — Humour","Shortlist"]
+  ], rows: [
+    ["I Røven af 4. Division","Danish Digital Award — Branded Content, Relevant over tid","gold",7,"rblm"],
     ["An Ad for an Ad","Danish Digital Award — The Big Idea","shortlist",1,"rblm"],
     ["An Ad for an Ad","Danish Digital Award — ROI","shortlist",1,"rblm"],
     ["An Ad for an Ad","Danish Digital Award — Branded Content","shortlist",1,"rblm"],
+    ["Pølsepresser du?","Advertising Effectiveness Award (nu Effie) — Guld","gold",7,"rblm"],
+    ["Familiefortællingen","Advertising Effectiveness Award (nu Effie) — Bronze","bronze",3,"rblm"],
     ["An Ad for an Ad","Creative Circle — Creative Use of Influencers","gold",7,"rblm"],
     ["An Ad for an Ad","Creative Circle — Integrated Campaigns","silver",4,"rblm"],
-    ["Bomae","Creative Circle — Film / 61+","silver",4,"rblm"],
+    ["Din teenager, din alkoholdning","Creative Circle — Film / 61+","silver",4,"rblm"],
     ["An Ad for an Ad","Creative Circle — SoMe Campaigns","shortlist",1,"rblm"],
     ["Bomae","Creative Circle — Humour in Advertising","shortlist",1,"rblm"],
+    ["Din teenager, din alkoholdning","Creative Circle — Art Direction","shortlist",1,"rblm"],
+    ["I Røven af 4. Division","Creative Circle — Branded Content","shortlist",1,"rblm"],
     ["Pølsepresser du?","Creative Circle — Creative Impact / on society","shortlist",1,"rblm"]
   ]},
   "2021-22": { rows: [
-    ["Pølsepresser du?","The True Award — Branded Content","bronze",3,"rblm"],
-    ["Pølsepresser du?","The True Award — Sound Design","shortlist",1,"rblm"],
-    ["Pølsepresser du?","The True Award — Campaign","shortlist",1,"rblm"],
-    ["Pølsepresser du?","Rambukken — Content Activation Prisen","shortlist",1,"rblm"],
-    ["Pølsepresser du?","Rambukken — Kampagne Prisen","shortlist",1,"rblm"],
-    ["Pølsepresser du?","Rambukken — Media Strategi Prisen","shortlist",1,"rblm"],
+    ["I Røven af 4. Division","The True Award — Branded Content","bronze",3,"rblm"],
+    ["I Røven af 4. Division","The True Award — Sound Design","shortlist",1,"rblm"],
+    ["I Røven af 4. Division","The True Award — Campaign","shortlist",1,"rblm"],
+    ["I Røven af 4. Division","Rambukken — Content Activation Prisen","shortlist",1,"rblm"],
+    ["I Røven af 4. Division","Rambukken — Kampagne Prisen","shortlist",1,"rblm"],
+    ["I Røven af 4. Division","Rambukken — Media Strategi Prisen","shortlist",1,"rblm"],
     ["Check the Tag","Creative Circle — Promo &amp; Activation / Physical","gold",7,"rblm"],
     ["Check the Tag","Creative Circle — SoMe Campaigns","shortlist",1,"rblm"],
     ["Check the Tag","Creative Circle — Creative Use of Influencers","shortlist",1,"rblm"],
@@ -352,7 +409,9 @@ const DATA = {
     ["Interactive print","Creative Circle — Print","silver",4,"co"],
     ["Think This (Kayak)","Creative Circle — Craft / Art Direction Film","silver",4,"co"]
   ] },
-  "2024-25": { rows: [
+  "2024-25": { bonus: [
+    ["Pass It On","The One Show — Casting","Gold"]
+  ], rows: [
     ["Pass It On","Eurobest — Casting","shortlist",1,"co"],
     ["Pass It On","The True Award — Film over 90 sek.","gold",7,"co"],
     ["Pass It On","The True Award — Director","gold",7,"co"],
@@ -370,7 +429,13 @@ const DATA = {
     ["Kampen mod Ludomani","Creative Circle — Earned Media","shortlist",1,"co"],
     ["Kampen mod Ludomani","Danish Digital Award — Best in Purpose","shortlist",1,"co"]
   ]},
-  "2025-26": { rows: [
+  "2025-26": { bonus: [
+    ["Case ikke identificeret","Clios — Health, Partnerships & Collaborations","Bronze"],
+    ["Pass It On","Effie Europe — Media Strategy & Idea","Bronze"],
+    ["Pass It On","CLIO — Branded Content, Unscripted","Bronze"],
+    ["Pass It On","CLIO — Creative Effectiveness","Bronze"],
+    ["Pass It On","Epica","Silver"]
+  ], rows: [
     ["Pass It On","Eurobest — Creative Effectiveness","grandprix",14,"co"],
     ["Pass It On","Eurobest — PR ×3","shortlist3x",3,"co"],
     ["Pass It On","Effie Awards Denmark — PR","silver",4,"co"],
@@ -452,7 +517,7 @@ function render() {
   });
 
   if (!visibleRows.length) {
-    content.innerHTML = '<p class="note">Ingen resultater for dette valg.</p>';
+    content.innerHTML = season.bonus ? '' : '<p class="note">Ingen resultater for dette valg.</p>';
   } else {
     const table = document.createElement('table');
     table.innerHTML = '<thead><tr><th>Case / kategori</th><th class="num">Resultat</th><th class="num">Point</th></tr></thead>';
@@ -472,6 +537,17 @@ function render() {
     });
     table.appendChild(tbody);
     content.appendChild(table);
+  }
+
+  if (season.bonus && season.bonus.length) {
+    const bonusDiv = document.createElement('div');
+    bonusDiv.className = 'bonus-section';
+    let bh = '<div class="bonus-title">Øvrige priser (tæller ikke med i pointsystemet)</div>';
+    season.bonus.forEach(function(b) {
+      bh += '<div class="bonus-row"><div><div class="bonus-case">' + b[0] + '</div><div class="bonus-show">' + b[1] + '</div></div><div class="bonus-result">' + b[2] + '</div></div>';
+    });
+    bonusDiv.innerHTML = bh;
+    content.appendChild(bonusDiv);
   }
 
   let seasonTotal = 0;
